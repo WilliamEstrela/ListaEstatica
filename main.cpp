@@ -45,14 +45,33 @@ void isSortCres(int vet[], int tamanho){
 
 }
 
+/**
+ * Função responsável por receber um vetor e copiar-lo para outro
+ * @param vet1 vetor original
+ * @param vet2 novo vetor
+ * @param tamanho tamanho dos dois vetores
+ */
+void coppyList(int vet1[], int vet2[], int tamanho){
 
+    for(int i=0; i < tamanho;i++){
+        vet2[i] = vet1[i];
+    }
+
+}
 
 int main(){
 
 
-    int vet[10] = {1,2,3,4,5,7,7,8,9,10};
-    isSortCres(vet,10);
+    //letra A
+    int l1[10] = {1,2,3,4,5,7,7,8,9,10};
+    isSortCres(l1,10);
 
+    //letra B
+    int l2[10] = {};
+    coppyList(l1, l2, 10);
+    for(int i =0; i < 10; i++){
+        cout << l2[i] <<endl;
+    }
 
     return 0;
 }
