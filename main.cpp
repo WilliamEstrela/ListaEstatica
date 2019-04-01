@@ -45,6 +45,12 @@ void isSortCres(int vet[], int tamanho){
 
 }
 
+void imprimeLista(int vet[], int tamanho){
+    for(int i=0; i < tamanho; i++){
+        cout << vet[i]<<endl;
+    }
+}
+
 /**
  * Função responsável por receber um vetor e copiar-lo para outro
  * @param vet1 vetor original
@@ -99,6 +105,19 @@ int coppyAndRemove(int vet1[], int vet2[], int tamanho){
 
 }
 
+/**
+ * Dado um vetor 'original', ele gera o 'novo' inversamente
+ * @param original vetor original
+ * @param novo novo vetor gerado com base no original
+ * @param tamanho tamanho
+ */
+void inverte(int original[], int novo[], int tamanho){
+
+    int aux  = tamanho-1;
+    for (int i=0; i < 10; i++){
+        novo[i] = original[aux--];
+    }
+}
 
 int main(){
 
@@ -126,6 +145,11 @@ int main(){
         cout << lista2[i] <<endl;
     }
 
+    cout << "Letra D" <<endl;
+    int vetor[10] = {1,2,3,4,5,6,7,8,9,10};
+    int vetor2[10] = {};
+    inverte(vetor, vetor2, 10);
+    imprimeLista(vetor2, 10);
 
     return 0;
 }
