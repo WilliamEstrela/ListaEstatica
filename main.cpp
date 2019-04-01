@@ -119,6 +119,26 @@ void inverte(int original[], int novo[], int tamanho){
     }
 }
 
+
+/**
+ * Dado um vetor de tamanho 10 ele inverte os valores no mesmo vetor passado como referencia
+ * @param vetor
+ * @param tamanho
+ */
+void inverteNaMesma(int vetor[], int tamanho){
+    int novo[10] = {};
+
+    int aux  = tamanho-1;
+    for (int i=0; i < 10; i++){
+        novo[i] = vetor[aux--];
+    }
+
+
+    for(int i=0; i< 10; i++){
+        vetor[i] = novo[i];
+    }
+}
+
 int main(){
 
 
@@ -150,6 +170,11 @@ int main(){
     int vetor2[10] = {};
     inverte(vetor, vetor2, 10);
     imprimeLista(vetor2, 10);
+
+    cout << "Letra E" <<endl;
+    int vetorD[10] = {1,2,3,4,5,6,7,8,9,10};
+    inverteNaMesma(vetorD, 10);
+    imprimeLista(vetorD,10);
 
     return 0;
 }
