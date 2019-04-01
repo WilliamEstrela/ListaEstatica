@@ -19,7 +19,7 @@ void isSortCres(int vet[], int tamanho){
 
         for(int i=0; i < tamanho; i++){
             if(vet[count] >= vet[count2]){
-                cout << " NAO ORDENADO" <<endl;
+                cout << " NAO ORDENADO!" <<endl;
                 break;
             }else{
 
@@ -139,6 +139,31 @@ void inverteNaMesma(int vetor[], int tamanho){
     }
 }
 
+/**
+ * Funcao que intercala dois vetores de tamanho fixo, retornando um outro do tamanho ao quadrado
+ * @param vet1 primeiro vetor
+ * @param vet2 segundo vetor a ser intercalado
+ * @param resultante novo vetor que é a soma dos dois vetores intercalados
+ * @param tamanho tamanho dos dois vetores iniciais
+ */
+void intercala(int vet1[], int vet2[], int resultante[], int tamanho){
+    int aux = 0;
+    int aux2 = 0;
+
+    for(int i= 0; i < tamanho+tamanho; i++){
+        if(aux < 10){
+            resultante[i] = vet1[i];
+            aux++;
+        }else{
+
+            resultante[aux] = vet2[aux2];
+            aux2++;
+            aux++;
+        }
+    }
+
+}
+
 int main(){
 
 
@@ -175,6 +200,17 @@ int main(){
     int vetorD[10] = {1,2,3,4,5,6,7,8,9,10};
     inverteNaMesma(vetorD, 10);
     imprimeLista(vetorD,10);
+
+    cout << "Letra F" <<endl;
+    int vetorF1[10] = {1,2,3,4,5,6,7,8,9,10};
+    int vetorF2[10] = {11,12,13,14,15,16,17,18,19,20};
+    int vetorF3[20] = {};
+
+    intercala(vetorF1,vetorF2,vetorF3,10);
+
+    imprimeLista(vetorF3,20);
+
+
 
     return 0;
 }
