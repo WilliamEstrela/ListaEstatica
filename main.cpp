@@ -18,7 +18,7 @@ void isSortCres(int vet[], int tamanho){
         int count2 = tamanho - 2;
 
         for(int i=0; i < tamanho; i++){
-            if(vet[count] >= vet[count2]){//{10,9,8,7,1,5,4,3,2,1}
+            if(vet[count] >= vet[count2]){
                 cout << " NAO ORDENADO" <<endl;
                 break;
             }else{
@@ -59,19 +59,73 @@ void coppyList(int vet1[], int vet2[], int tamanho){
 
 }
 
+
+/**
+ * Metodo auxiliar que verificar se o 'vet' contém o 'objetivo'
+ * @param objetivo
+ * @param vet
+ * @param tamanho
+ * @return true caso contenha
+ */
+bool contain(int objetivo, int vet[], int tamanho){
+    for(int i=0; i < tamanho; i++){
+        if(vet[i] == objetivo)
+            return true;
+    }
+    return false;
+}
+
+/**
+ * função responsável por copiar um vetor no outro e eleiminar elemntos repetidos
+ * @param vet1
+ * @param vet2
+ * @param tamanho
+ * @return novo tamanho da nova lista sem os repetidos
+ */
+int coppyAndRemove(int vet1[], int vet2[], int tamanho){
+
+    vet2[0] = vet1[0];
+    int aux = 0;
+
+    for(int i=1; i < tamanho-1; i++){
+       if(!contain(vet1[i],vet2,10)){
+           vet2[aux] = vet1[i];
+           aux++;
+       }
+
+    }
+
+    return aux;
+
+}
+
+
 int main(){
 
 
-    //letra A
+
+    cout << "Letra A" <<endl;
     int l1[10] = {1,2,3,4,5,7,7,8,9,10};
     isSortCres(l1,10);
 
-    //letra B
+
+    cout << "Letra B" <<endl;
     int l2[10] = {};
     coppyList(l1, l2, 10);
     for(int i =0; i < 10; i++){
         cout << l2[i] <<endl;
     }
+
+
+    cout << "Letra C" <<endl;
+    int lista[10] = {8,2,3,4,5,8,8,8,9,10};
+    int lista2[10] = {};
+    int novoTamanho =  coppyAndRemove(lista, lista2,10);
+
+    for(int i =0; i < novoTamanho; i++){
+        cout << lista2[i] <<endl;
+    }
+
 
     return 0;
 }
