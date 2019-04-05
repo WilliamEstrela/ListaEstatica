@@ -21,18 +21,15 @@ void isSortCres(int vet[], int tamanho){
             if(vet[count] >= vet[count2]){
                 cout << " NAO ORDENADO!" <<endl;
                 break;
-            }else{
-
             }
             count--;
             count2--;
         }
         cout << "ordenado... decrescente"  <<endl;
+
     }else{//ele é crescente
         for(int i=0; i < tamanho; i++){
             if(vet[count] <= vet[count2]){
-
-            }else{
                 cout << " NAO ORDENADO" <<endl;
                 break;
             }
@@ -205,11 +202,8 @@ int main(){
     int vetorF1[10] = {1,2,3,4,5,6,7,8,9,10};
     int vetorF2[10] = {11,12,13,14,15,16,17,18,19,20};
     int vetorF3[20] = {};
-
     intercala(vetorF1,vetorF2,vetorF3,10);
-
     imprimeLista(vetorF3,20);
-
 
 
     return 0;
